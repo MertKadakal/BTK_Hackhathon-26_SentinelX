@@ -1,0 +1,40 @@
+.page { animation: fadeInUp 0.5s ease-out; }
+.header { margin-bottom: 24px; }
+.title { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; margin-bottom: 6px; }
+.subtitle { font-size: 0.85rem; color: var(--text-secondary); }
+
+.filters { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
+.filterBtn {
+  padding: 8px 18px; font-size: 0.8rem; font-weight: 600; color: var(--text-secondary);
+  background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border);
+  border-radius: 20px; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 6px;
+}
+.filterBtn:hover { background: rgba(255,255,255,0.06); color: var(--text-primary); }
+.filterActive { background: rgba(0,212,255,0.1); border-color: rgba(0,212,255,0.3); color: var(--accent-cyan); }
+.filterCount { font-size: 0.65rem; opacity: 0.7; }
+
+.txnList { display: flex; flex-direction: column; gap: 12px; }
+.txnCard { padding: 20px; animation: fadeInUp 0.4s ease-out both; }
+.txnMain { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.txnLeft { display: flex; align-items: center; gap: 14px; flex: 1; min-width: 0; }
+.txnIcon { font-size: 1.5rem; width: 44px; height: 44px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.txnInfo { display: flex; flex-direction: column; min-width: 0; }
+.txnMerchant { font-size: 0.95rem; font-weight: 700; color: var(--text-primary); }
+.txnMeta { font-size: 0.7rem; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.txnRight { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0; margin-left: 16px; }
+.txnAmount { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 800; }
+
+.aiNotes {
+  padding: 12px 14px; background: rgba(123,45,255,0.04);
+  border: 1px solid rgba(123,45,255,0.08); border-radius: var(--radius-sm);
+  margin-bottom: 12px; font-size: 0.78rem; line-height: 1.6; color: var(--text-secondary);
+}
+.aiLabel { font-weight: 700; color: var(--accent-purple); margin-right: 6px; }
+.aiText { color: var(--text-secondary); }
+
+.txnFooter { display: flex; gap: 20px; flex-wrap: wrap; }
+.indicator { display: flex; flex-direction: column; gap: 2px; }
+.indicatorLabel { font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.indicatorValue { font-family: var(--font-heading); font-size: 0.8rem; font-weight: 700; }
+
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }

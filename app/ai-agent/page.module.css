@@ -1,0 +1,62 @@
+.page { animation: fadeInUp 0.5s ease-out; }
+.header { margin-bottom: 28px; }
+.title { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; margin-bottom: 6px; }
+.subtitle { font-size: 0.85rem; color: var(--text-secondary); }
+
+/* Metrics */
+.metricsRow { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; margin-bottom: 28px; }
+.metricCard { padding: 16px; text-align: center; }
+.metricValue { display: block; font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; }
+.metricLabel { font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+
+.mainGrid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 24px; margin-bottom: 28px; }
+
+/* Thinking Process */
+.thinkingSection { padding: 24px; }
+.phases { display: flex; gap: 16px; margin-bottom: 16px; }
+.phaseCard {
+  flex: 1; padding: 18px; background: rgba(255,255,255,0.02);
+  border: 1px solid var(--glass-border); border-radius: var(--radius-md);
+  transition: all 0.5s;
+}
+.phaseActive { border-color: rgba(0,212,255,0.3); background: rgba(0,212,255,0.04); box-shadow: 0 0 20px rgba(0,212,255,0.1); }
+.phaseHeader { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+.phaseIcon { font-size: 1.3rem; }
+.phaseTitle { font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; }
+.phaseIndicator { width: 8px; height: 8px; border-radius: 50%; background: var(--accent-cyan); animation: pulse 1s ease-in-out infinite; margin-left: auto; }
+.phaseItems { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.phaseItems li { font-size: 0.72rem; color: var(--text-muted); display: flex; align-items: center; gap: 8px; transition: color 0.3s; }
+.phaseItemActive { color: var(--text-secondary) !important; }
+.checkmark { font-size: 0.7rem; width: 16px; }
+.cycleInfo { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: var(--text-muted); padding: 12px; background: rgba(255,255,255,0.02); border-radius: var(--radius-sm); }
+.cycleSpinner { animation: spin 2s linear infinite; font-size: 1rem; }
+
+/* Log */
+.logSection { padding: 24px; max-height: 500px; overflow-y: auto; }
+.logList { display: flex; flex-direction: column; gap: 6px; }
+.logItem { display: flex; align-items: flex-start; gap: 10px; padding: 10px 12px; border-radius: var(--radius-sm); font-size: 0.75rem; line-height: 1.5; transition: background 0.2s; }
+.logItem:hover { background: rgba(255,255,255,0.03); }
+.log_danger { border-left: 2px solid var(--accent-red); }
+.log_warning { border-left: 2px solid var(--accent-amber); }
+.log_safe { border-left: 2px solid var(--accent-green); }
+.log_info { border-left: 2px solid var(--accent-cyan); }
+.logTime { font-family: var(--font-heading); font-weight: 600; color: var(--text-muted); min-width: 40px; font-size: 0.7rem; }
+.logType { font-size: 0.9rem; flex-shrink: 0; }
+.logMessage { color: var(--text-secondary); }
+
+/* RAG Section */
+.ragSection { padding: 24px; }
+.ragDesc { font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 20px; }
+.ragGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.ragItem { display: flex; gap: 12px; padding: 16px; background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); border-radius: var(--radius-md); transition: all 0.2s; }
+.ragItem:hover { border-color: rgba(0,212,255,0.2); background: rgba(0,212,255,0.03); }
+.ragIcon { font-size: 1.5rem; flex-shrink: 0; }
+.ragTitle { font-family: var(--font-heading); font-size: 0.8rem; font-weight: 700; margin-bottom: 4px; }
+.ragItemDesc { font-size: 0.7rem; color: var(--text-muted); line-height: 1.5; }
+
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 1200px) { .metricsRow { grid-template-columns: repeat(3, 1fr); } .mainGrid { grid-template-columns: 1fr; } .ragGrid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 768px) { .metricsRow { grid-template-columns: repeat(2, 1fr); } .phases { flex-direction: column; } .ragGrid { grid-template-columns: 1fr; } }

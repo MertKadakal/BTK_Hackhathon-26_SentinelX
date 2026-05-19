@@ -1,0 +1,45 @@
+.page { animation: fadeInUp 0.5s ease-out; }
+.header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 28px; flex-wrap: wrap; gap: 16px; }
+.title { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; margin-bottom: 6px; }
+.subtitle { font-size: 0.85rem; color: var(--text-secondary); }
+
+/* Flow Section */
+.flowSection { padding: 28px; margin-bottom: 28px; }
+.flowSteps { display: flex; flex-direction: column; gap: 0; }
+.flowStep { display: flex; align-items: center; gap: 16px; padding: 16px 20px; border-radius: var(--radius-md); background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); transition: all 0.5s; }
+.step_checking { border-color: rgba(0,212,255,0.3); background: rgba(0,212,255,0.05); box-shadow: 0 0 20px rgba(0,212,255,0.1); }
+.step_pass { border-color: rgba(0,230,118,0.2); background: rgba(0,230,118,0.03); }
+.step_fail { border-color: rgba(255,59,92,0.2); background: rgba(255,59,92,0.03); }
+.stepIcon { font-size: 1.5rem; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.spinner { animation: spin 1s linear infinite; }
+.stepContent { flex: 1; }
+.stepTitle { display: block; font-family: var(--font-heading); font-size: 0.9rem; font-weight: 700; }
+.stepDesc { display: block; font-size: 0.75rem; color: var(--text-muted); }
+.stepResult { display: block; font-size: 0.75rem; font-weight: 600; margin-top: 4px; }
+.flowConnector { display: flex; justify-content: center; padding: 4px 0; }
+.connectorLine { width: 2px; height: 16px; background: rgba(255,255,255,0.06); border-radius: 1px; transition: background 0.5s; }
+.connectorActive { background: var(--accent-cyan); }
+
+/* Verdict */
+.verdict { margin-top: 24px; padding: 24px; border-radius: var(--radius-lg); display: flex; gap: 20px; animation: fadeInUp 0.5s ease-out; }
+.verdictBlocked { background: rgba(255,59,92,0.06); border: 1px solid rgba(255,59,92,0.2); }
+.verdictIcon { font-size: 3rem; flex-shrink: 0; }
+.verdictContent { flex: 1; }
+.verdictTitle { font-family: var(--font-heading); font-size: 1.2rem; font-weight: 800; color: var(--accent-red); margin-bottom: 8px; }
+.verdictDesc { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 14px; }
+.verdictActions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* Cycle */
+.cycleSection { padding: 28px; }
+.cycleFlow { display: flex; align-items: flex-start; gap: 6px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; }
+.cycleItem { display: flex; flex-direction: column; align-items: center; gap: 8px; max-width: 140px; text-align: center; position: relative; }
+.cycleIcon { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+.cycleTitle { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 700; }
+.cycleDesc { font-size: 0.65rem; color: var(--text-muted); line-height: 1.4; }
+.cycleArrow { position: absolute; right: -16px; top: 16px; color: var(--text-muted); font-size: 1rem; }
+.cycleNote { text-align: center; font-size: 0.75rem; color: var(--text-muted); padding: 12px; background: rgba(255,255,255,0.02); border-radius: var(--radius-sm); }
+
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 768px) { .cycleFlow { flex-direction: column; align-items: center; } .cycleArrow { display: none; } }

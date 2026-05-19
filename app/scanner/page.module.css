@@ -1,0 +1,105 @@
+.scanner { animation: fadeInUp 0.5s ease-out; }
+.header { margin-bottom: 28px; }
+.title { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; margin-bottom: 6px; }
+.subtitle { font-size: 0.85rem; color: var(--text-secondary); max-width: 600px; }
+
+/* Search */
+.searchSection { margin-bottom: 28px; }
+.searchBar {
+  display: flex; align-items: center; gap: 12px;
+  background: rgba(12, 17, 30, 0.7); backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-xl);
+  padding: 8px 12px 8px 20px; transition: all 0.3s;
+}
+.searchBar:focus-within { border-color: var(--accent-cyan); box-shadow: 0 0 0 4px rgba(0,212,255,0.1); }
+.searchIcon { font-size: 1.2rem; }
+.searchInput { flex: 1; border: none; background: transparent; color: var(--text-primary); font-size: 1rem; outline: none; padding: 10px 0; }
+.searchInput::placeholder { color: var(--text-muted); }
+.scanBtn {
+  padding: 10px 24px; font-family: var(--font-heading); font-size: 0.9rem; font-weight: 700;
+  color: #fff; background: var(--accent-gradient); border: none; border-radius: var(--radius-xl);
+  cursor: pointer; transition: all 0.2s; white-space: nowrap;
+}
+.scanBtn:hover { transform: scale(1.03); box-shadow: var(--shadow-glow-cyan); }
+.scanBtn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+.scanSpinner { display: inline-block; animation: spin 1s linear infinite; }
+
+/* Scanning */
+.scanningOverlay {
+  display: flex; align-items: center; justify-content: center; padding: 60px 0; animation: fadeInUp 0.4s ease-out;
+}
+.scanningContent { text-align: center; }
+.dnaLoader { display: flex; gap: 6px; align-items: center; height: 60px; justify-content: center; margin-bottom: 20px; }
+.dnaLoader span {
+  width: 6px; border-radius: 3px; background: var(--accent-gradient);
+  animation: dnaWave 1.2s ease-in-out infinite;
+}
+.dnaLoader span:nth-child(1) { height: 20px; animation-delay: 0s; }
+.dnaLoader span:nth-child(2) { height: 30px; animation-delay: 0.1s; }
+.dnaLoader span:nth-child(3) { height: 40px; animation-delay: 0.2s; }
+.dnaLoader span:nth-child(4) { height: 50px; animation-delay: 0.3s; }
+.dnaLoader span:nth-child(5) { height: 60px; animation-delay: 0.4s; }
+.dnaLoader span:nth-child(6) { height: 50px; animation-delay: 0.5s; }
+.dnaLoader span:nth-child(7) { height: 40px; animation-delay: 0.6s; }
+.dnaLoader span:nth-child(8) { height: 30px; animation-delay: 0.7s; }
+.dnaLoader span:nth-child(9) { height: 20px; animation-delay: 0.8s; }
+@keyframes dnaWave { 0%,100% { transform: scaleY(0.5); opacity: 0.5; } 50% { transform: scaleY(1.2); opacity: 1; } }
+.scanningText { font-family: var(--font-heading); font-size: 1.2rem; font-weight: 700; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.scanningSubtext { font-size: 0.8rem; color: var(--text-secondary); margin-top: 8px; }
+
+/* Results */
+.results { animation: fadeInUp 0.5s ease-out; }
+.scoreSection { display: grid; grid-template-columns: 320px 1fr; gap: 24px; margin-bottom: 24px; }
+.scoreCard { padding: 28px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.scoreHeader { display: flex; align-items: center; gap: 14px; width: 100%; }
+.siteFavicon { font-size: 2rem; }
+.siteName { font-family: var(--font-heading); font-size: 1.2rem; font-weight: 800; }
+.siteUrl { font-size: 0.75rem; color: var(--text-muted); }
+.scoreActions { width: 100%; display: flex; flex-direction: column; gap: 10px; }
+
+/* AI Recommendation */
+.aiRecommendation { padding: 24px; border: 1px solid rgba(255,255,255,0.08); display: flex; flex-direction: column; justify-content: center; }
+.aiTitle { font-family: var(--font-heading); font-size: 1rem; font-weight: 700; margin-bottom: 12px; }
+.aiText { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px; }
+.aiWarning {
+  display: flex; align-items: flex-start; gap: 10px; padding: 14px;
+  background: rgba(255,59,92,0.06); border: 1px solid rgba(255,59,92,0.15);
+  border-radius: var(--radius-md); font-size: 0.8rem; color: var(--accent-red); line-height: 1.5;
+}
+.aiSafe {
+  display: flex; align-items: flex-start; gap: 10px; padding: 14px;
+  background: rgba(0,230,118,0.06); border: 1px solid rgba(0,230,118,0.15);
+  border-radius: var(--radius-md); font-size: 0.8rem; color: var(--accent-green); line-height: 1.5;
+}
+
+/* Detail Cards */
+.detailsGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.detailCard { padding: 20px; }
+.detailHeader { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+.detailIcon { font-size: 1.3rem; }
+.detailTitle { font-family: var(--font-heading); font-size: 0.9rem; font-weight: 700; }
+.detailContent { display: flex; flex-direction: column; gap: 12px; }
+.detailRow { display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; }
+.detailRow span:first-child { color: var(--text-secondary); }
+.attackTypes { font-size: 0.7rem; color: var(--text-muted); text-align: right; max-width: 180px; }
+
+/* Quick Scan */
+.quickSection { animation: fadeInUp 0.5s ease-out; }
+.siteGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+.siteCard { padding: 20px; cursor: pointer; transition: all 0.2s; }
+.siteCard:hover { transform: translateY(-3px); border-color: var(--accent-cyan); box-shadow: var(--shadow-glow-cyan); }
+.siteCardHeader { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.siteCardFavicon { font-size: 1.5rem; }
+.siteCardName { font-family: var(--font-heading); font-size: 0.9rem; font-weight: 700; margin-bottom: 4px; }
+.siteCardUrl { font-size: 0.7rem; color: var(--text-muted); display: block; margin-bottom: 14px; }
+.siteCardScore { display: flex; align-items: center; gap: 10px; }
+.siteCardScoreBar { flex: 1; height: 5px; background: rgba(255,255,255,0.06); border-radius: 3px; overflow: hidden; }
+.siteCardScoreFill { height: 100%; border-radius: 3px; transition: width 0.8s ease; }
+
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 900px) {
+  .scoreSection { grid-template-columns: 1fr; }
+  .detailsGrid { grid-template-columns: 1fr; }
+}

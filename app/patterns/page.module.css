@@ -1,0 +1,71 @@
+.page { animation: fadeInUp 0.5s ease-out; }
+.header { margin-bottom: 28px; }
+.title { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; margin-bottom: 6px; }
+.subtitle { font-size: 0.85rem; color: var(--text-secondary); }
+
+.section { padding: 24px; margin-bottom: 24px; }
+.note { font-size: 0.75rem; color: var(--text-muted); padding: 10px 14px; background: rgba(255,255,255,0.02); border-radius: var(--radius-sm); margin-bottom: 18px; line-height: 1.6; border-left: 3px solid rgba(0,212,255,0.3); }
+
+.twoCol { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+/* Anomalies */
+.anomalyList { display: flex; flex-direction: column; gap: 12px; }
+.anomalyItem { padding: 16px; border-radius: var(--radius-md); background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); }
+.severity_critical { border-left: 3px solid var(--accent-red); }
+.severity_high { border-left: 3px solid var(--accent-amber); }
+.severity_medium { border-left: 3px solid var(--accent-cyan); }
+.anomalyHeader { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
+.anomalyTitle { font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; flex: 1; }
+.anomalyDesc { font-size: 0.78rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 8px; }
+.anomalySource { font-size: 0.65rem; color: var(--text-muted); font-style: italic; }
+
+/* Heatmap */
+.heatmap { display: flex; align-items: flex-end; gap: 3px; height: 140px; padding-bottom: 22px; position: relative; }
+.heatCell { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; position: relative; }
+.heatBar { width: 100%; min-height: 4px; border-radius: 2px 2px 0 0; transition: height 1s ease; }
+.heatLabel { position: absolute; bottom: -20px; font-size: 0.5rem; font-weight: 600; }
+
+/* Weekly Chart */
+.weeklyChart { display: flex; align-items: flex-end; gap: 12px; height: 160px; padding-bottom: 40px; }
+.weekDay { flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%; position: relative; }
+.weekBarContainer { flex: 1; width: 100%; display: flex; align-items: flex-end; }
+.weekBar { width: 100%; background: var(--accent-gradient); border-radius: 4px 4px 0 0; transition: height 1s ease; min-height: 4px; }
+.weekAmount { position: absolute; bottom: 18px; font-size: 0.6rem; font-weight: 600; color: var(--text-secondary); }
+.weekLabel { position: absolute; bottom: 0; font-size: 0.65rem; font-weight: 600; color: var(--text-muted); }
+
+/* Geographic */
+.geoList { display: flex; flex-direction: column; gap: 14px; }
+.geoItem { display: flex; align-items: center; gap: 12px; }
+.geoLeft { display: flex; align-items: center; gap: 10px; min-width: 130px; }
+.geoFlag { font-size: 1.3rem; }
+.geoCountry { display: block; font-size: 0.82rem; font-weight: 600; }
+.geoTxns { display: block; font-size: 0.65rem; color: var(--text-muted); }
+.geoRight { flex: 1; display: flex; align-items: center; gap: 10px; }
+.geoBar { flex: 1; height: 8px; background: rgba(255,255,255,0.06); border-radius: 4px; overflow: hidden; }
+.geoBarFill { height: 100%; border-radius: 4px; transition: width 1s ease; }
+.geoPercent { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 700; min-width: 32px; text-align: right; }
+
+/* Calendar */
+.calendarList { display: flex; flex-direction: column; gap: 12px; }
+.calendarItem { display: flex; align-items: center; gap: 14px; padding: 14px; background: rgba(255,255,255,0.02); border-radius: var(--radius-md); border: 1px solid var(--glass-border); }
+.calendarIcon { font-size: 1.5rem; }
+.calendarInfo { flex: 1; }
+.calendarTitle { display: block; font-size: 0.85rem; font-weight: 600; }
+.calendarDate { display: block; font-size: 0.7rem; color: var(--text-muted); }
+.calendarLocation { display: block; font-size: 0.7rem; color: var(--text-secondary); margin-top: 2px; }
+.noTravelNote { font-size: 0.72rem; color: var(--accent-amber); padding: 10px 14px; background: rgba(255,179,0,0.06); border-radius: var(--radius-sm); border: 1px solid rgba(255,179,0,0.1); }
+
+/* Category Grid */
+.catGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; }
+.catCard { padding: 16px; background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); border-radius: var(--radius-md); text-align: center; transition: all 0.2s; }
+.catCard:hover { border-color: rgba(0,212,255,0.2); transform: translateY(-2px); }
+.catIcon { display: block; font-size: 1.8rem; margin-bottom: 8px; }
+.catName { display: block; font-size: 0.75rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 4px; }
+.catAmount { display: block; font-family: var(--font-heading); font-size: 1rem; font-weight: 800; color: var(--text-primary); margin-bottom: 10px; }
+.catBar { width: 100%; height: 4px; background: rgba(255,255,255,0.06); border-radius: 2px; overflow: hidden; margin-bottom: 6px; }
+.catBarFill { height: 100%; border-radius: 2px; }
+.catCount { font-size: 0.65rem; color: var(--text-muted); }
+
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 900px) { .twoCol { grid-template-columns: 1fr; } }

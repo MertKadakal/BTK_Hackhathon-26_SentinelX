@@ -1,0 +1,57 @@
+.page { animation: fadeInUp 0.5s ease-out; }
+.header { margin-bottom: 28px; }
+.title { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; margin-bottom: 6px; }
+.subtitle { font-size: 0.85rem; color: var(--text-secondary); max-width: 600px; }
+
+/* Search */
+.searchSection { margin-bottom: 28px; }
+.searchBar {
+  display: flex; align-items: center; gap: 12px;
+  background: rgba(12,17,30,0.7); backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-xl);
+  padding: 8px 12px 8px 20px; transition: all 0.3s;
+}
+.searchBar:focus-within { border-color: var(--accent-cyan); box-shadow: 0 0 0 4px rgba(0,212,255,0.1); }
+.searchInput { flex: 1; border: none; background: transparent; color: var(--text-primary); font-size: 0.95rem; outline: none; padding: 10px 0; }
+.searchInput::placeholder { color: var(--text-muted); }
+
+/* Result */
+.resultSection { margin-bottom: 28px; animation: fadeInUp 0.5s ease-out; }
+.resultCard { padding: 28px; }
+.resultHeader { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; gap: 20px; }
+.resultHolder { font-family: var(--font-heading); font-size: 1.3rem; font-weight: 800; margin-bottom: 6px; }
+.resultIBAN { display: block; font-family: var(--font-heading); font-size: 0.8rem; color: var(--text-secondary); letter-spacing: 1px; margin-bottom: 4px; }
+.resultBank { font-size: 0.75rem; color: var(--text-muted); }
+
+.resultStats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 20px; }
+.resultStat { text-align: center; padding: 14px; background: rgba(255,255,255,0.02); border-radius: var(--radius-md); border: 1px solid var(--glass-border); }
+.statIcon { display: block; font-size: 1.3rem; margin-bottom: 6px; }
+.statValue { display: block; font-family: var(--font-heading); font-size: 1rem; font-weight: 800; }
+.statLabel { display: block; font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+
+.resultDetails { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+.detailRow { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 0.82rem; }
+.detailRow span:first-child { color: var(--text-muted); }
+.detailRow span:last-child { font-weight: 600; }
+
+.resultNotes { padding: 14px; border-radius: var(--radius-md); border: 1px solid; font-size: 0.8rem; line-height: 1.6; color: var(--text-secondary); }
+
+/* Quick Select */
+.quickSection { margin-top: 8px; }
+.ibanGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+.ibanCard { padding: 20px; cursor: pointer; transition: all 0.2s; }
+.ibanCard:hover { transform: translateY(-3px); border-color: var(--accent-cyan); box-shadow: var(--shadow-glow-cyan); }
+.ibanCardHeader { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.ibanHolder { font-family: var(--font-heading); font-size: 0.9rem; font-weight: 700; }
+.ibanNumber { display: block; font-size: 0.7rem; color: var(--text-muted); letter-spacing: 1px; margin-bottom: 4px; font-family: var(--font-heading); }
+.ibanBank { display: block; font-size: 0.7rem; color: var(--text-secondary); margin-bottom: 12px; }
+.ibanStats { display: flex; gap: 14px; font-size: 0.7rem; color: var(--text-muted); margin-bottom: 12px; }
+.ibanRiskBar { width: 100%; height: 4px; background: rgba(255,255,255,0.06); border-radius: 2px; overflow: hidden; }
+.ibanRiskFill { height: 100%; border-radius: 2px; transition: width 0.8s ease; }
+
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 768px) {
+  .resultStats { grid-template-columns: repeat(2, 1fr); }
+  .resultHeader { flex-direction: column; align-items: flex-start; }
+}

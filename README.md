@@ -16,7 +16,6 @@
 8. [Bileşen Mimarisi](#bileşen-mimarisi)
 9. [Geliştirme Rehberi](#geliştirme-rehberi)
 10. [Dağıtım](#dağıtım)
-11. [Lisans](#lisans)
 
 ---
 
@@ -186,7 +185,7 @@ v1/
 ### Adım 1: Projeyi Klonlama
 
 ```bash
-git clone https://github.com/yourusername/sentinelx.git
+git clone https://github.com/MertKadakal/sentinelx.git
 cd sentinelx
 ```
 
@@ -641,7 +640,7 @@ curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 # Projeyi klonlama
-git clone https://github.com/yourusername/sentinelx.git
+git clone https://github.com/MertKadakal/sentinelx.git
 cd sentinelx
 ```
 
@@ -755,7 +754,7 @@ Projeye katkıda bulunmak istiyorsanız:
 ## 📞 İletişim
 
 ### Sorular ve Öneriler
-- **GitHub Issues**: [GitHub Issues](https://github.com/yourusername/sentinelx/issues)
+- **GitHub Issues**: [GitHub Issues](https://github.com/MertKadakal/sentinelx/issues)
 
 ---
 
